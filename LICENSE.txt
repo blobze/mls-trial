@@ -1,0 +1,6 @@
+Musician Life: copyright (c) 2026 Omar Nassar. All rights reserved.
+
+You may play this game in your browser. You may not copy, modify, redistribute, re-host,
+decompile or reuse its code, rules, text, story or artwork, in whole or in part, without
+written permission. The open-source runtime in pyodide/ (MPL-2.0), the fonts in fonts/ (SIL
+OFL 1.1) and the icons in icons/ (MIT) keep their own licences.
