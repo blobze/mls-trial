@@ -7,7 +7,7 @@
 <meta name="referrer" content="no-referrer">
 <title>Musician Life</title>
 <style>
-  /* Password door for the playtest website: the game itself is encrypted (bundle.dat). */
+  /* Private password entry; public builds replace its form with a loading screen. */
   :root { --bg:#f7f4ed; --text:#20201d; --muted:#605b55; --line:#b4ada3; --accent:#b44436; color-scheme: light; }
   @media (prefers-color-scheme: dark) { :root { --bg:#191918; --text:#f3efe6; --muted:#c0b9af; --line:#59564f; --accent:#e47762; color-scheme: dark; } }
   * { box-sizing: border-box; }
@@ -25,17 +25,7 @@
 </style>
 </head>
 <body>
-<form id="door" autocomplete="off">
-  <h1>Private playtest</h1>
-  <p>Enter the password you were given. What you do in the game and any feedback you send are recorded for the designer.</p>
-  <label for="name">Your name</label>
-  <input id="name" maxlength="40" placeholder="So the designer knows who is playing">
-  <label for="pw">Password</label>
-  <input id="pw" type="password" autocomplete="current-password">
-  <label class="row"><input id="keep" type="checkbox" checked> Remember on this device</label>
-  <button id="open" type="submit">Open the game</button>
-  <p id="msg" role="status"></p>
-</form>
+<main id="door" role="status" aria-live="polite"><h1>Musician Life</h1><p>Loading your game…</p></main>
 <script>
 "use strict";
 (function () {
@@ -111,13 +101,12 @@
 
   // The public site opens without a password: its bundle key ships in the page (it only
   // keeps the game files from being casually copied), and nobody is asked for a name.
-  const PUBLIC_KEY = "SFC-M_IazIpLWkCFPwdJEANqKEUuGvgv";
+  const PUBLIC_KEY = "jQT-WgcBlJEQRFlnmRniz15lsjrdtIvQ";
   if (PUBLIC_KEY) {
-    $("door").hidden = true;
     let id = store.get("playtest-tester");
     if (!id) { id = Math.random().toString(36).slice(2, 12); store.set("playtest-tester", id); }
     decrypt(PUBLIC_KEY).then((files) => open(files, { id, name: "Player " + id.slice(0, 4) }))
-      .catch(() => { $("door").hidden = false; $("door").innerHTML = "<h1>Musician Life</h1><p>The game could not load. Refresh to try again.</p>"; });
+      .catch(() => { $("door").innerHTML = "<h1>Musician Life</h1><p>The game could not load. Refresh to try again.</p>"; });
     return;
   }
   $("name").value = store.get("playtest-name") || "";
