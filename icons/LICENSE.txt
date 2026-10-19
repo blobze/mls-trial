@@ -1,2 +1,2 @@
-Colour icons (*.png) were generated for Musician Life-Sim with Canva (media MAHYYylFxk0, 2026-10-18) and cut by
+Colour icons (*.png) were generated for Musician Life-Sim with Canva (media MAHYYylFxk0, 2026-10-18, and MAHYanLuSRo, 2026-10-19) and cut by
 tools/pixel_icons.py; arrow, caret and close masks (*.svg) are original, drawn by the same tool.
