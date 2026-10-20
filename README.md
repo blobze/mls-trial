@@ -2,4 +2,4 @@
 
 A music-career life sim you can play in your browser: https://blobze.github.io/mls-trial/
 
-Copyright (c) 2026 Omar Nassar. All rights reserved. See LICENSE.txt.
+Copyright (c) 2026 Musician Life. All rights reserved. See LICENSE.txt.
