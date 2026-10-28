@@ -78,7 +78,7 @@
     document.body.innerHTML = files["body.html"];
     await runScript({ code: files["theme.js"] });
     await runScript({ src: "pyodide/pyodide.js" });
-    for (const name of ["playtest.js", "boot.js", "reports.js", "app.js"]) await runScript({ code: files[name] });
+    for (const name of ["playtest.js", "boot.js", "reports.js", "brand.js", "app.js"]) await runScript({ code: files[name] });
   }
 
   async function attempt(password, name, quiet) {
@@ -101,7 +101,7 @@
 
   // The public site opens without a password: its bundle key ships in the page (it only
   // keeps the game files from being casually copied), and nobody is asked for a name.
-  const PUBLIC_KEY = "IcCxGbUgoM_Z919l_jZFb147rL9Uz_pm";
+  const PUBLIC_KEY = "KiMqziYYMi85hD5k9ED4GHDlhfVzDAwq";
   if (PUBLIC_KEY) {
     let id = store.get("playtest-tester");
     if (!id) { id = Math.random().toString(36).slice(2, 12); store.set("playtest-tester", id); }
